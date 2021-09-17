@@ -135,8 +135,7 @@ export default function App() {
 
       <div className="dataContainer">
         <div className="header">
-
-          <span role="img" aria-label="wave">👋</span> Hey there!
+          👋 Hey there!
         </div>
 
         <div className="bio">
@@ -149,7 +148,7 @@ export default function App() {
             <div className="counter">
               <p>Total Waves:</p>
               <h1>{totalCount}</h1>
-              <input type="text" onChange={textInputHandler} />
+              <input type="text" placeholder="send me a message!" onChange={textInputHandler} />
             </div>
           ) : (
             <div className="counter">
@@ -160,7 +159,7 @@ export default function App() {
         </div>
 
         <button className="waveButton" onClick={wave}>
-          <span roll="img" aria-label="sparkle">✨</span>  Wave at Me  <span roll="img" aria-label="sparkle">✨</span>
+          ✨ Wave at Me ✨
         </button>
 
         {currentAccount ? null : (
@@ -172,9 +171,9 @@ export default function App() {
           {allWaves.map((wave, index) => {
             return (
               <div className="waveContainer">
-                <div><h3><span roll="img" aria-label="house">🏠</span> Address:</h3> {wave.address}</div>
-                <div><h3><span roll="img" aria-label="watch">⏱</span> Time:</h3> {wave.timestamp.toString()}</div>
-                <div><h3><span roll="img" aria-label="note">📝</span> Message:</h3> {wave.message}</div>
+                <div><h3>🏠 Address:</h3><p>{wave.address}</p></div>
+                <div><h3>⏱  Time:</h3><p>{wave.timestamp.toString()}</p></div>
+                <div><h3>📝 Message:</h3><p>{wave.message}</p></div>
               </div>
             )
           })}

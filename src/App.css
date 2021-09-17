@@ -1,8 +1,23 @@
+* {
+  /* margin: 0; */
+  /* padding: 0;  */
+  box-sizing:border-box;
+}
+
+body {
+  background-color: #111927;
+  background-image: 
+      radial-gradient(at 47% 33%, hsl(220.00, 16%, 36%) 0, transparent 59%), 
+      radial-gradient(at 82% 65%, hsl(220.00, 16%, 22%) 0, transparent 55%);
+  color: #d8dee9;
+}
+
 .mainContainer {
   display: flex;
   justify-content: center;
   width: 100%;
   margin-top: 64px;
+  min-height: 100vh;
 }
 
 .dataContainer {
@@ -20,7 +35,7 @@
 
 .bio {
   text-align: center;
-  color: gray;
+  color: #d8dee9;
   margin-top: 16px;
 }
 
@@ -37,7 +52,10 @@
   color: white;
   width: 60%;
   margin: 1rem auto;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  box-shadow: 5px 5px 10px rgba(255,255,255,0.3);
+  background: #88c0d0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #81a1c1, #88c0d0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #81a1c1, #88c0d0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 .counterContainer{
@@ -58,6 +76,40 @@
   font-size: 3rem;
 }
 
+.counter input {
+  width: 60%;
+  border: none;
+  padding: 1rem 2rem;
+  margin-top: 16px;
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(216, 222, 233, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  color: #d8dee9;
+}
+
+input:focus{
+  outline: none;
+  border: 1px solid #e5e9f0;
+  box-shadow: 0px 0px 10px #e5e9f0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #d8dee9;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #d8dee9;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #d8dee9;
+}
+
 .allWavesContainer {
   display: flex;
   flex-direction: column;
@@ -69,11 +121,38 @@
   grid-auto-flow: row;
   margin: 1rem; 
   padding: 1rem;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(216, 222, 233, 0.25);
   border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
+.waveContainer p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 90%;
+}
 .waveContainer div {
   text-overflow: ellipsis;
   width: 100%;
 }
+
+@media screen and (max-width: 600px){
+  .dataContainer{
+    width: 100%;
+  }
+
+  .waveContainer p {
+    width: 70%;
+  }
+
+  html, body {
+    overflow-x: hidden;
+  }
+  body {
+    position: relative
+  }
+}
+
+
