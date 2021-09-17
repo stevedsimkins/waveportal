@@ -1,0 +1,79 @@
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 64px;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.header {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.bio {
+  text-align: center;
+  color: gray;
+  margin-top: 16px;
+}
+
+.waveButton {
+  cursor: pointer;
+  margin-top: 16px;
+  padding: 15px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  background: #005AA7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFFDE4, #005AA7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  width: 60%;
+  margin: 1rem auto;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+
+}
+.counterContainer{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.counter {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.counter h1 {
+  font-size: 3rem;
+}
+
+.allWavesContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.waveContainer {
+  display: grid;
+  grid-auto-flow: row;
+  margin: 1rem; 
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+.waveContainer div {
+  text-overflow: ellipsis;
+  width: 100%;
+}
