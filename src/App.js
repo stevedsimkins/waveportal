@@ -9,7 +9,7 @@ import animationData2 from "./assets/ether.json";
 export default function App() {
   // State variable to hold our user's public wallet address 
   const [currentAccount, setCurrentAccount] = React.useState("");
-  const contractAddress = "0x12bd405952342387340953883FCcCCc44d19ef67";
+  const contractAddress = "0x97c6Cc2Ae3eFE28054acA035ACAEFA483aAC30Fa";
   const contractABI = abi.abi;
   const [allWaves, setAllWaves] = React.useState([]);
   const [isPlaying, setIsPlaying] = React.useState(false);
