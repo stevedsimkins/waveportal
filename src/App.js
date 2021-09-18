@@ -148,17 +148,20 @@ export default function App() {
       <div className="dataContainer">
         <div className="header">
           <Lottie className="lottie" options={cryptoOptions} height={300} width={300} />
-          <h3>👾 Welcome to the Ether</h3>
+          <h3>Welcome to the Ether</h3>
         </div>
 
         <div className="bio">
-          My name is <a href="https://bio.link/stevedsimkins" target="_blank">Steve</a>, and with the help of <a href="https://buildspace.so/" target="_blank">@_buildspace</a> I've built a
-          working Web3 app with Solidity and Ethereum smart contracts!
-          Send me the name of your favorite coffee shop and watch it
-          be added to the blockchain!
-
-          You will need <a href="https://metamask.io/" target="_blank">Metamask</a> <br />
-          and some <a href="https://app.mycrypto.com/faucet" target="_blank">Rinkeby testnet</a> to try this out.
+          <p>
+            My name is <a href="https://bio.link/stevedsimkins" target="_blank">Steve</a>,
+            and with the help of <a href="https://buildspace.so/" target="_blank">@_buildspace</a>
+            I've built a working Web3 app with Solidity and Ethereum smart contracts!
+            Send me the name of your favorite coffee shop and watch it be added to the blockchain!
+          </p>
+          <p>
+            You will need <a href="https://metamask.io/" target="_blank">Metamask</a><br />
+            and some <a href="https://app.mycrypto.com/faucet" target="_blank">Rinkeby testnet</a> to try this out.
+          </p>
         </div>
         <div className="counterContainer">
           {!isPlaying ? (

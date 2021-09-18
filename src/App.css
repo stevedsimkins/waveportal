@@ -11,6 +11,7 @@ body {
   /*     radial-gradient(at 47% 33%, hsl(220.00, 16%, 36%) 0, transparent 59%),  */
   /*     radial-gradient(at 82% 65%, hsl(220.00, 16%, 22%) 0, transparent 55%); */
   color: #d8dee9;
+  font-family: 'Monterrat', sans-serif;
 }
 
 a {
