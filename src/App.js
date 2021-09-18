@@ -5,6 +5,8 @@ import abi from "./utils/WavePortal.json";
 import Lottie from "react-lottie";
 import animationData from "./assets/mining.json";
 import animationData2 from "./assets/ether.json";
+import { motion } from "framer-motion";
+import { fade } from "./animations.jsx";
 
 export default function App() {
   // State variable to hold our user's public wallet address 
@@ -141,7 +143,7 @@ export default function App() {
   }
 
   return (
-    <div className="mainContainer">
+    <motion.div variants={fade} initial={"hidden"} animate={"show"} className="mainContainer">
 
       <div className="dataContainer">
         <div className="header">
@@ -194,6 +196,6 @@ export default function App() {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
