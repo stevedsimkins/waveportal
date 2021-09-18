@@ -13,6 +13,10 @@ body {
   color: #d8dee9;
 }
 
+a {
+  color: #d8dee9;
+}
+
 .mainContainer {
   display: flex;
   justify-content: center;

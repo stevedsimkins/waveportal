@@ -152,16 +152,20 @@ export default function App() {
         </div>
 
         <div className="bio">
-          My name is Steve, and with the help of @_Buildspace I've built a
+          My name is <a href="https://bio.link/stevedsimkins" target="_blank">Steve</a>, and with the help of <a href="https://buildspace.so/" target="_blank">@_buildspace</a> I've built a
           working Web3 app with Solidity and Ethereum smart contracts!
           Send me the name of your favorite coffee shop and watch it
-          be added to the blockchain! You will need Metamask and some
-          Rinkeby testnet to try this out.
+          be added to the blockchain!
+
+          You will need <a href="https://metamask.io/" target="_blank">Metamask</a> <br />
+          and some <a href="https://app.mycrypto.com/faucet" target="_blank">Rinkeby testnet</a> to try this out.
         </div>
         <div className="counterContainer">
           {!isPlaying ? (
             <div className="counter">
-              <h4>Total Coffee Shops:</h4>
+              {!currentAccount ? null : (
+                <h4>Total Coffee Shops:</h4>
+              )}
               <h1>{totalCount}</h1>
               {!currentAccount ? null : (
                 <input type="text" placeholder="Favorite Coffee Spot? ☕️" onChange={textInputHandler} />
@@ -196,6 +200,6 @@ export default function App() {
           })}
         </div>
       </div>
-    </motion.div>
+    </motion.div >
   );
 };
