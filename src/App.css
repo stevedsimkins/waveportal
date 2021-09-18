@@ -5,10 +5,11 @@
 }
 
 body {
-  background-color: #111927;
-  background-image: 
-      radial-gradient(at 47% 33%, hsl(220.00, 16%, 36%) 0, transparent 59%), 
-      radial-gradient(at 82% 65%, hsl(220.00, 16%, 22%) 0, transparent 55%);
+  background-image: linear-gradient(to right top, #2e3440, #303643, #333946, #353b4a, #383e4d, #3a4151, #3d4454, #3f4758, #424b5c, #454e61, #495265, #4c566a);
+  /* background-color: #111927; */
+  /* background-image:  */
+  /*     radial-gradient(at 47% 33%, hsl(220.00, 16%, 36%) 0, transparent 59%),  */
+  /*     radial-gradient(at 82% 65%, hsl(220.00, 16%, 22%) 0, transparent 55%); */
   color: #d8dee9;
 }
 
@@ -99,7 +100,7 @@ input:focus{
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: #d8dee9;
-  opacity: 1; /* Firefox */
+  opacity: 0.5; /* Firefox */
 }
 
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -130,7 +131,6 @@ input:focus{
 
 .waveContainer p {
   overflow: hidden;
-  text-overflow: ellipsis;
   width: 90%;
 }
 .waveContainer div {
@@ -145,6 +145,7 @@ input:focus{
 
   .waveContainer p {
     width: 70%;
+    text-overflow: ellipsis;
   }
 
   html, body {

@@ -3,7 +3,8 @@ import { ethers } from "ethers";
 import './App.css';
 import abi from "./utils/WavePortal.json";
 import Lottie from "react-lottie";
-import animationData from "./assets/circle.json"
+import animationData from "./assets/mining.json";
+import animationData2 from "./assets/ether.json";
 
 export default function App() {
   // State variable to hold our user's public wallet address 
@@ -53,7 +54,8 @@ export default function App() {
         setCurrentAccount(accounts[0])
       })
       .catch(err => console.log(err));
-    checkIfWalletIsConnected();
+    getAllWaves();
+    getTotal();
   }
 
   const wave = async () => {
@@ -113,7 +115,6 @@ export default function App() {
   React.useEffect(() => {
     checkIfWalletIsConnected();
     getTotal();
-    getAllWaves();
   }, []);
 
   // Test method
@@ -130,38 +131,52 @@ export default function App() {
     }
   };
 
+  const cryptoOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData2,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice"
+    }
+  }
+
   return (
     <div className="mainContainer">
 
       <div className="dataContainer">
         <div className="header">
-          👋 Hey there!
+          <Lottie className="lottie" options={cryptoOptions} height={300} width={300} />
+          <h3>👾 Welcome to the Ether</h3>
         </div>
 
         <div className="bio">
-          With the help of @_Buildspace I've built a working Web3 app with Solidity
-          and Ethereum smart contracts! Give me a wave and watch it turn into a
-          blockchain through an Ethereum smart contract!
+          My name is Steve, and with the help of @_Buildspace I've built a
+          working Web3 app with Solidity and Ethereum smart contracts!
+          Send me the name of your favorite coffee shop and watch it
+          be added to the blockchain! You will need Metamask and some
+          Rinkeby testnet to try this out.
         </div>
         <div className="counterContainer">
           {!isPlaying ? (
             <div className="counter">
-              <p>Total Waves:</p>
+              <h4>Total Coffee Shops:</h4>
               <h1>{totalCount}</h1>
-              <input type="text" placeholder="send me a message!" onChange={textInputHandler} />
+              {!currentAccount ? null : (
+                <input type="text" placeholder="Favorite Coffee Spot? ☕️" onChange={textInputHandler} />
+              )}
             </div>
           ) : (
             <div className="counter">
               <Lottie className="lottie" options={defaultOptions} height={300} width={300} />
-              <p>Sending your wave...</p>
+              <p>Mining...</p>
             </div>
           )}
         </div>
-
-        <button className="waveButton" onClick={wave}>
-          ✨ Wave at Me ✨
-        </button>
-
+        {!currentAccount ? null : (
+          <button className="waveButton" onClick={wave}>
+            ✨ Send it ✨
+          </button>
+        )}
         {currentAccount ? null : (
           <button className="waveButton" onClick={connectWallet}>
             Connect Wallet
