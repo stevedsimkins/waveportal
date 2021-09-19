@@ -115,9 +115,13 @@ export default function App() {
 
   // Primary method 
   React.useEffect(() => {
-    checkIfWalletIsConnected();
-    getTotal();
-  }, []);
+    if (currentAccount) {
+      getAllWaves();
+      getTotal();
+    } else {
+      checkIfWalletIsConnected();
+    }
+  }, [currentAccount]);
 
   // Test method
   //  React.useEffect(checkIfWalletIsConnected, getTotal);
