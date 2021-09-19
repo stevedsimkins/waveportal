@@ -47,7 +47,7 @@ export default function App() {
   const connectWallet = () => {
     const { ethereum } = window;
     if (!ethereum) {
-      alert("Get Metamask!")
+      alert("Get MetaMask! If on a mobile device use the browser built into MetaMask!")
     }
 
     ethereum.request({ method: 'eth_requestAccounts' })
